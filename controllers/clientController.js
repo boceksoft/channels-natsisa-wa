@@ -5,14 +5,17 @@ import qrcode from "qrcode";
 export const initializeClients = async () => {
     try {
         const users = await fetchUsers();
-        if (!users) 
-            throw new Error("Kullanıcılar alınırken hata oluştu.");
+        //if (!users) 
+          //  throw new Error("Kullanıcılar alınırken hata oluştu.");
 
-        users.forEach(user => {
-            if (user.userId) {
-                createClient(user.userId);
-            }
-        });
+        createClient(1);
+        createClient(2);
+        
+        //users.forEach(user => {
+          //  if (user.userId) {
+                
+            //}
+        //});
 
         console.log("Tüm kullanıcılar için istemciler başlatıldı.");
     }
